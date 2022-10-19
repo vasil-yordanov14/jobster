@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { showStats } from "../../features/user/allJobs/allJobsSlice";
 
 const Stats = () => {
-  return (
-    <h1>Stats</h1>
-  )
-}
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(showStats());
+  }, []);
+  return <h1>Stats</h1>;
+};
 
-export default Stats
+export default Stats;
